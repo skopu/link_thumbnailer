@@ -31,7 +31,7 @@ LinkThumbnailer.configure do |config|
 
   # List of attributes you want LinkThumbnailer to fetch on a website.
   #
-  # config.attributes = [:title, :images, :description, :videos, :favicon]
+  # config.attributes = [:title, :images, :description, :videos, :favicon, :words_count]
 
   # List of procedures used to rate the website description. Add you custom class
   # here. See wiki for more details on how to build your own graders.
