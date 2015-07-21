@@ -4,7 +4,7 @@ module LinkThumbnailer
   module Models
     class Website < ::LinkThumbnailer::Model
 
-      attr_accessor :url, :title, :description, :images, :videos, :favicon
+      attr_accessor :url, :title, :description, :images, :videos, :favicon, :words_count
 
       def initialize
         @images = []
@@ -43,7 +43,8 @@ module LinkThumbnailer
           title:        title,
           description:  description,
           images:       images.map(&:as_json),
-          videos:       videos.map(&:as_json)
+          videos:       videos.map(&:as_json),
+          words_count:  words_count
         }
       end
 
