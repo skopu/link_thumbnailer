@@ -5,6 +5,8 @@
 [![Gem Version](https://badge.fury.io/rb/link_thumbnailer.svg)](http://badge.fury.io/rb/link_thumbnailer)
 [![Dependency Status](https://gemnasium.com/gottfrois/link_thumbnailer.svg)](https://gemnasium.com/gottfrois/link_thumbnailer)
 
+**Fork with Words Count attribute.**
+
 Ruby gem generating image thumbnails from a given URL. Rank them and give you back an object containing images and website informations. Works like Facebook link previewer.
 
 Demo Application is [here](http://link-thumbnailer-demo.herokuapp.com/) !
@@ -22,6 +24,7 @@ The source code of the Demo Application is hosted [here](https://github.com/gott
 - Support image urls blacklisting (advertisements).
 - Works with and without Rails.
 - Fully customizable.
+- Words Count in Article
 - Fully tested.
 
 ## Installation
@@ -77,7 +80,7 @@ LinkThumbnailer `generate` method return an instance of `LinkThumbnailer::Models
 
 ```ruby
 object.to_json
- => "{\"url\":\"http://stackoverflow.com\",\"title\":\"Stack Overflow\",\"description\":\"Q&A for professional and enthusiast programmers\",\"images\":[{\"src\":\"http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6\",\"size\":[316,316],\"type\":\"png\"}]}"
+ => "{\"url\":\"http://stackoverflow.com\",\"title\":\"Stack Overflow\",\"words_count\": 234,\"description\":\"Q&A for professional and enthusiast programmers\",\"images\":[{\"src\":\"http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6\",\"size\":[316,316],\"type\":\"png\"}]}"
 ```
 
 
@@ -120,7 +123,7 @@ LinkThumbnailer.configure do |config|
 
   # List of attributes you want LinkThumbnailer to fetch on a website.
   #
-  # config.attributes = [:title, :images, :description, :videos, :favicon]
+  # config.attributes = [:title, :images, :description, :videos, :favicon, :words_count]
 
   # List of procedures used to rate the website description. Add you custom class
   # here. See wiki for more details on how to build your own graders.
