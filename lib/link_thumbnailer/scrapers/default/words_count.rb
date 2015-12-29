@@ -13,7 +13,7 @@ module LinkThumbnailer
         private
 
         def count_from_body
-          nodes_from_body.map{|a| a.text}.join(' ').split.reject { |w| w !~ /([a-zA-Z]+(_[a-zA-Z]+)*)/ }.count
+          nodes_from_body.map{|a| a.text}.join(' ').encode('UTF-8', :invalid => :replace).split.reject { |w| w !~ /([a-zA-Z]+(_[a-zA-Z]+)*)/ }.count
         end
 
         def node_from_meta
