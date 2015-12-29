@@ -10,11 +10,11 @@ module LinkThumbnailer
     end
 
     def size
-      images.first.size
+      images.first.try(:size)
     end
 
     def type
-      images.first.type
+      images.first.try(:type)
     end
 
     private
